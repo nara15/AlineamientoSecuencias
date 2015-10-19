@@ -1,0 +1,18 @@
+# depslib dependency file v1.0
+1445294850 source:c:\users\jose mario\documents\github\alineamientosecuencias\align.c
+	<stdlib.h>
+	<string.h>
+	<stdio.h>
+	"align.h"
+
+1445294000 c:\users\jose mario\documents\github\alineamientosecuencias\align.h
+
+1445297258 source:c:\users\jose mario\documents\github\alineamientosecuencias\main.c
+	<stdlib.h>
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<limits.h>
+	<ctype.h>
+	"align.h"
+
