@@ -1,12 +1,6 @@
 #ifndef ALIGN_C_INCLUDED
 #define ALIGN_C_INCLUDED
 
-/*Align.c
-  by Cyrus Wilson
-  Simple Implementation of Needleman-Wunsch algorithm for aligning sequences*/
-
-/*Note that to keep this at least somewhat understandable this implementation
-  leaves error-checking up to the program using it!*/
 
 #include <stdlib.h>
 #include <string.h>
@@ -323,12 +317,9 @@ Alignment align(char *seq1, char *seq2, int gapInit, int gapXtnd) {
   matrix = matrixInit(length1, length2);  /*make empty matrix for sequences*/
   ptrMatrix = ptrMatrixInit(length1, length2);  /*make empty pointer matrix*/
   similarity(matrix, seq1, length1, seq2, length2);/*construct similarity matrix*/
-  /*printf("\nSimilarity Matrix:\n");
-    printMatrix(matrix, length1, length2);*/
+
   bestAlignment = sumMatrix(matrix, length1, length2, gapInit, gapXtnd, ptrMatrix);
-  /*printf("\nSum Matrix:\n");
-    printMatrix(matrix, length1, length2);
-    printf("\nAlignment:\n");*/
+
   result = traceBack(length1, length2, seq1, seq2, ptrMatrix, bestAlignment);
 
   deleteMatrix((void **) matrix, length1);          /*clean up*/

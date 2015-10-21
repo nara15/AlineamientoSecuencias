@@ -16,3 +16,11 @@
 	<ctype.h>
 	"align.h"
 
+1445456920 source:m:\alineamientosecuencias\align.c
+	<stdlib.h>
+	<string.h>
+	<stdio.h>
+	"align.h"
+
+1445452766 m:\alineamientosecuencias\align.h
+

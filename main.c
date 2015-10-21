@@ -120,51 +120,117 @@ void printAlignment(Alignment result, int cols) {
   is compiled; otherwise the program will reject the file and quit.  In addition
   the gap penalty parameters must be integers, which makes them rather useless*/
 
+
+//NEEDLEMAN WUNSCH ALGORITHM
+
+int maximum(int a, int b, int c)
+{
+    int max;
+    if (a > b && a > c)
+    {
+        max = a;
+    }
+    else
+    {
+        if ( b > c)
+        {
+            max = b;
+        }
+        else
+        {
+            max = c;
+        }
+    }
+    return max;
+}
+
+
+
 void main() {
 
-  char *sequence1, *sequence2;  /*store sequences returned by loadSequence*/
-  int gapInit, gapXtnd;         /*store gap penalty factors*/
-  Alignment result;             /*store result obtained from align*/
+    //Tamaños de las hileras (secuencias)
+    char str1[] = "ATTGTGATCC";
+    char str2[] = "TTGCATCGGC";
+    int dimString1 = sizeof(str1)/sizeof(str1[0]);
+    int dimString2 = sizeof(str2)/sizeof(str2[0]);
+    //Gap penalty, match, mismatch
+    int GAP_PENALTY = -2;
+    int MATCH = 1;
+    int MISMATCH = -1;
 
-/*  if(argc != 5) {
-    fprintf(stderr, "Invalid arguments specified\n");
-    printf("Usage:  NWalign seqfile1 seqfile2 gapInit gapXtnd\n");
-    printf("  where seqfile1 and seqfile 2 are files containing alphabetic sequences,\n");
-    printf("  gapInit is gap opening penalty, and gapXtnd is gap elongation factor.\n\n");
-    printf("Example:  NWalign protein1.seq protein2.seq 0 0\n");
-    exit(EXIT_FAILURE);
-  }*/
+    int table[dimString1 + 1][dimString2 + 1], i, j;
 
-//  sequence1 = loadSequence(argv[1]);
-//  sequence2 = loadSequence(argv[2]);
+    //Iniciar la matriz para las hileras
+    for (i = 0; i <= dimString1; i ++)
+    {
+        table[i][0] = i * GAP_PENALTY;
+    }
+    for (j = 0; j <= dimString2; j ++)
+    {
+        table[0][j] = j * GAP_PENALTY;
+    }
+
+    //Algoritmo Needleman-Wunsch
+    int s,a,b,c;
+
+    for (i = 1; i <= dimString1; i ++)
+    {
+        for (j = 1; j <= dimString2; j ++)
+        {
+            if (str1[j - 1] == str2[i - 1])
+            {
+                s = MATCH;
+            }
+            else
+            {
+                s = MISMATCH;
+            }
+
+            a = table[i - 1][j - 1] + s;
+            b = table[i][j - 1] + GAP_PENALTY;
+            c = table[i - 1][j] + GAP_PENALTY;
+
+            table[i][j] = maximum(a, b, c);
+        }
+    }
+    printf("%i", table[10][10]);
+
+    /*
+    char *sequence1, *sequence2;  //store sequences returned by loadSequence
+    int gapInit, gapXtnd;         //store gap penalty factors
+    Alignment result;             //store result obtained from align
+
     sequence1 = loadSequence("hola1.seq");
     sequence2 = loadSequence("hola2.seq");
 
-  if(!(sequence1 && sequence2)) { /*error reading sequences*/
-    fprintf(stderr, "Error reading sequences\n");
-    exit(EXIT_FAILURE);
-  }
+    if(!(sequence1 && sequence2))
+    {
+        fprintf(stderr, "Error reading sequences\n");
+        exit(EXIT_FAILURE);
+    }
 
-  gapInit = 0;//atoi(argv[3]);
-  gapXtnd = 0;//atoi(argv[4]);
+    gapInit = 0;
+    gapXtnd = 0;
 
-  if(gapInit < 0) {               /*invalid gap opening penalty*/
-    fprintf(stderr, "%i is invalid gap opening penalty\n", gapInit);
-    exit(EXIT_FAILURE);
-  }
+    if(gapInit < 0)
+    {
+        fprintf(stderr, "%i is invalid gap opening penalty\n", gapInit);
+        exit(EXIT_FAILURE);
+    }
 
-  if(gapXtnd < 0) {               /*invalid gap extension factor*/
-    fprintf(stderr, "%i is invalid gap elongation factor\n", gapXtnd);
-    exit(EXIT_FAILURE);
-  }
+    if(gapXtnd < 0)
+    {
+        fprintf(stderr, "%i is invalid gap elongation factor\n", gapXtnd);
+        exit(EXIT_FAILURE);
+    }
 
-  result = align(sequence1, sequence2, gapInit, gapXtnd);
+    result = align(sequence1, sequence2, gapInit, gapXtnd);
 
-  free(sequence1);                /*sequence strings no longer needed*/
-  free(sequence2);
+    free(sequence1);
+    free(sequence2);
 
-  printAlignment(result, 79);     /*print out the alignment*/
+    printAlignment(result, 79);
 
-  free(result.first);             /*clean up*/
-  free(result.second);
+    free(result.first);
+    free(result.second);*/
 }
