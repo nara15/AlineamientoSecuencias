@@ -35,6 +35,13 @@
 			<Option compilerVar="CC" />
 		</Unit>
 		<Unit filename="align.h" />
+		<Unit filename="alineamientos/needleman_wunsch.c">
+			<Option compilerVar="CC" />
+			<Option target="&lt;{~None~}&gt;" />
+		</Unit>
+		<Unit filename="alineamientos/needleman_wunsch.h">
+			<Option target="&lt;{~None~}&gt;" />
+		</Unit>
 		<Unit filename="main.c">
 			<Option compilerVar="CC" />
 		</Unit>
