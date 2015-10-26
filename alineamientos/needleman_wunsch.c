@@ -1,31 +1,29 @@
 #ifndef NEEDLEMAN_WUNSCH_C_INCLUDED
 #define NEEDLEMAN_WUNSCH_C_INCLUDED
 
+#include <string.h>
 #include "needleman_wunsch.h"
+
 /*
 *   Función encargada de iniciar la matriz para el alineamiento
 */
-int** iniciarMatriz (int pCantFilas, int pCantColumnas)
-{
-    int **matriz = (int **)malloc(pCantFilas * sizeof(int *));
+int **iniciarMatriz(int dim1, int dim2) {
     int i, j;
-    for (i = 0; i < pCantFilas; i ++)
-    {
-        matriz[i] = (int *)malloc(pCantColumnas * sizeof(int));
+    int **array = (int **) malloc(dim1 * sizeof(int *));
+    for(i = 0; i < dim1; i++) {
+            array[i] = (int *) malloc(dim2 * sizeof(int));
     }
-
-    //Inicializar la matriz con los valores iniciales
-    for (i = 0; i <= pCantFilas; i ++)
+    for (i = 0; i < dim1; i ++)
     {
-        matriz[i][0] = i * GAP_PENALTY;
+        array[i][0] = i * GAP_PENALTY;
     }
-    for (j = 0; j <= pCantColumnas; j ++)
+    for (j = 0; j < dim2; j ++)
     {
-        matriz[0][j] = j * GAP_PENALTY;
+        array[0][j] = j * GAP_PENALTY;
     }
-
-    return matriz;
+    return(array);
 }
+
 /*
 *   Función para liberar la memoria solcitada para la matriz
 */
@@ -38,17 +36,66 @@ void eliminarMatriz (int **pMatriz, int pDim)
     free(pMatriz);
 }
 
+int maximum(int a, int b, int c)
+{
+    int max;
+    if (a > b && a > c)
+    {
+        max = a;
+    }
+    else
+    {
+        if ( b > c)
+        {
+            max = b;
+        }
+        else
+        {
+            max = c;
+        }
+    }
+    return max;
+}
 
 
-//Función para el alineamiento global usando NEEDLEMAN_WUNSH
+/*
+*   Función para el alineamiento global usando NEEDLEMAN_WUNSH
+*/
 void needleman_wunsch(char *pSeq1, char *pSeq2)
 {
-    int **matrix = iniciarMatriz(10, 10);
+    //Inicialización de la matriz
+    int dimSeq1 = strlen(pSeq1);
+    int dimSeq2 = strlen(pSeq2);
+    int **table = iniciarMatriz(dimSeq1 + 1, dimSeq2 + 1);
 
-    printf("%i", matrix[0][0]);
+    //Algoritmo Needleman-Wunsch
+    int s,a,b,c;
+    int i, j;
+    for (i = 1; i <= dimSeq1; i ++)
+    {
+        for (j = 1; j <= dimSeq2; j ++)
+        {
+            if (pSeq1[j - 1] == pSeq2[i - 1])
+            {
+                s = MATCH;
+            }
+            else
+            {
+                s = MISMATCH;
+            }
 
-    //eliminarMatriz(matrix, 10);
+            a = table[i - 1][j - 1] + s;
+            b = table[i][j - 1] + GAP_PENALTY;
+            c = table[i - 1][j] + GAP_PENALTY;
 
+            table[i][j] = maximum(a, b, c);
+        }
+    }
+
+    //Algoritmo de Traceback
+
+    //Liberar la memoria de la matriz
+    eliminarMatriz(table, dimSeq1 + 1);
 }
 
 #endif // NEEDLEMAN_WUNSCH_C_INCLUDED

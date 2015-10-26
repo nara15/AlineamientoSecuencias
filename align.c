@@ -76,8 +76,7 @@ Point **ptrMatrixInit(int dim1, int dim2) {
   pointers and then frees the array of pointers.*/
 
 void deleteMatrix(void **matrix, int length) {
-  int i;  /*iterator*/
-
+  int i;
   for(i = 0; i < length; i++)
     free(matrix[i]);
 

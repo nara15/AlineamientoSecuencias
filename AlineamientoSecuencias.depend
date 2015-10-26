@@ -1,5 +1,5 @@
 # depslib dependency file v1.0
-1445462255 source:c:\users\jose mario\documents\github\alineamientosecuencias\align.c
+1445874461 source:c:\users\jose mario\documents\github\alineamientosecuencias\align.c
 	<stdlib.h>
 	<string.h>
 	<stdio.h>
@@ -7,7 +7,7 @@
 
 1445294000 c:\users\jose mario\documents\github\alineamientosecuencias\align.h
 
-1445750925 source:c:\users\jose mario\documents\github\alineamientosecuencias\main.c
+1445875863 source:c:\users\jose mario\documents\github\alineamientosecuencias\main.c
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
@@ -23,7 +23,8 @@
 
 1445452766 m:\alineamientosecuencias\align.h
 
-1445752641 c:\users\jose mario\documents\github\alineamientosecuencias\alineamientos\needleman_wunsch.c
+1445876508 c:\users\jose mario\documents\github\alineamientosecuencias\alineamientos\needleman_wunsch.c
+	<string.h>
 	"needleman_wunsch.h"
 
 1445746098 c:\users\jose mario\documents\github\alineamientosecuencias\alineamientos\needleman_wunsch.h

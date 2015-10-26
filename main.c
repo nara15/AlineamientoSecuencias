@@ -11,29 +11,6 @@
 
 //NEEDLEMAN WUNSCH ALGORITHM
 
-int maximum(int a, int b, int c)
-{
-    int max;
-    if (a > b && a > c)
-    {
-        max = a;
-    }
-    else
-    {
-        if ( b > c)
-        {
-            max = b;
-        }
-        else
-        {
-            max = c;
-        }
-    }
-    return max;
-}
-
-
-
 int main() {
     char str1[] = "ATTGTGATCC";
     char str2[] = "TTGCATCGGC";
