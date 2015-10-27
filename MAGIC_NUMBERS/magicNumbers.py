@@ -2,7 +2,7 @@
 
 
 def main():
-    l= list(genWorld(16).items())
+    l= list(genWorld(100).items())
     l.sort()
     print(l)
 
