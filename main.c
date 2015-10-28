@@ -12,10 +12,8 @@
 //NEEDLEMAN WUNSCH ALGORITHM
 
 int main() {
-    char str1[] = "ATTGTGATCC";
-    char str2[] = "TTGCATCGGC";
-    int dimString1 = sizeof(str1)/sizeof(str1[0]);
-    int dimString2 = sizeof(str2)/sizeof(str2[0]);
+    char str1[] = "GCATGCU";
+    char str2[] = "GATTACA";
 
     needleman_wunsch(str1, str2);
 
