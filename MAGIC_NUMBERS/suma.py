@@ -46,24 +46,27 @@ def sumar1(pNum1, pNum2, base):
 
     result = ""
     sumIndex = max(len(pNum1), len(pNum2))
+    mayor = pNum1 if len(pNum1) > len(pNum2) else pNum2
+    menor = pNum1 if len(pNum1) < len(pNum2) else pNum2
 
     dig1 = 0
     dig2 = 0
     llevoDig = 0
 
     for i in range (sumIndex, 0, -1):
-        dig1 = world[pNum1[-1:]]
-        pNum1 = pNum1[:-1]
+        dig1 = world[mayor[-1:]]
+        mayor = mayor[:-1]
         dig2 = 0
-        if len(pNum2) != 0:
-            dig2 = world[pNum2[-1:]]
-            pNum2 = pNum2[:-1]
+        if len(menor) != 0:
+            dig2 = world[menor[-1:]]
+            menor = menor[:-1]
 
         suma = dig1 + dig2 + llevoDig
         if (suma) >= base:
-            digDer = suma % base
-            llevoDig = suma // base
-
+            #digDer = suma % base
+            #llevoDig = suma // base
+            digDer, llevoDig = divmod(suma, base)
+            
             key = list(world.keys())[list(world.values()).index(digDer)]
             result = result + key
         else:
@@ -77,6 +80,8 @@ def sumar1(pNum1, pNum2, base):
     print (result[::-1])
         
 
-
+def mayor (num1, num2):
+    mayor = num1 if num1 > num2 else num2
+    return mayor
         
 
