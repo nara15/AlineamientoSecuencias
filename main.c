@@ -29,8 +29,8 @@ int main() {
     free(sequence2);
 */
     char *sequence1, *sequence2;
-    sequence1 = loadSequence("smith1.seq");
-    sequence2 = loadSequence("smith2.seq");
+    sequence1 = loadSequence("str2.fa");
+    sequence2 = loadSequence("str1.fa");
 
     if(!(sequence1 && sequence2)) {
         fprintf(stderr, "Error al leer las secuencias\n");

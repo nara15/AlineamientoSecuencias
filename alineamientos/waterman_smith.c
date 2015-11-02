@@ -122,8 +122,8 @@ void waterman_smith (char *pSeq1, char *pSeq2)
             }
         }
     }
-    //printf("%i", highScorePos[0]);
 
+/*
     //Algoritmo de Traceback
     i = highScorePos[0];
     j = highScorePos[1];
@@ -145,30 +145,26 @@ void waterman_smith (char *pSeq1, char *pSeq2)
         //Inicio oficial del algoritmo
         if ( (i > 0) && (j > 0) && (table[i][j] == table[i - 1][j - 1] + s))
         {
-            //printf("%c", pSeq1[i - 1]);
-            //printf("%c\n", pSeq2[j - 1]);
-            printf("%i\n", table[i][j]);
+            printf("%c", pSeq1[i - 1]);
+            printf("%c\n", pSeq2[j - 1]);
             i --;
             j --;
         }
         else {
             if ( (i > 0) && (table[i][j] == table[i - 1][j] + GAP_PENALTY))
             {
-                //printf("%c", pSeq1[i - 1]);
-                //printf("%c\n", '*');
-                 printf("%i\n", table[i][j]);
+                printf("%c", pSeq1[i - 1]);
+                printf("%c\n", '*');
                 i --;
             }
             else {
-                //printf("%i, %i\n", table[i][j], table[j][j - 1] + GAP_PENALTY);
-                //printf("%c", '*');
-                //printf("%c\n", pSeq2[j - 1]);
-                 printf("%i\n", table[i][j]);
+                printf("%c", '*');
+                printf("%c\n", pSeq2[j - 1]);
                 j --;
             }
         }
     }
-
+*/
 
     //Liberar la memoria de la matriz
     eliminarMatrizSW(table, dimSeq1 + 1);

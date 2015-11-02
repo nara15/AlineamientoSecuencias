@@ -1,19 +1,21 @@
 # depslib dependency file v1.0
-1445874461 source:c:\users\jose mario\documents\github\alineamientosecuencias\align.c
+1446492733 source:c:\users\jose mario\documents\github\alineamientosecuencias\align.c
 	<stdlib.h>
 	<string.h>
 	<stdio.h>
 	"align.h"
 
-1445294000 c:\users\jose mario\documents\github\alineamientosecuencias\align.h
+1446492733 c:\users\jose mario\documents\github\alineamientosecuencias\align.h
 
-1446063823 source:c:\users\jose mario\documents\github\alineamientosecuencias\main.c
+1446494607 source:c:\users\jose mario\documents\github\alineamientosecuencias\main.c
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
 	<limits.h>
 	<ctype.h>
+	"readFile.c"
 	"alineamientos/needleman_wunsch.c"
+	"alineamientos/waterman_smith.c"
 
 1446480996 source:m:\alineamientosecuencias\align.c
 	<stdlib.h>
@@ -23,11 +25,11 @@
 
 1446480996 m:\alineamientosecuencias\align.h
 
-1446063852 c:\users\jose mario\documents\github\alineamientosecuencias\alineamientos\needleman_wunsch.c
+1446492733 c:\users\jose mario\documents\github\alineamientosecuencias\alineamientos\needleman_wunsch.c
 	<string.h>
 	"needleman_wunsch.h"
 
-1446063879 c:\users\jose mario\documents\github\alineamientosecuencias\alineamientos\needleman_wunsch.h
+1446492733 c:\users\jose mario\documents\github\alineamientosecuencias\alineamientos\needleman_wunsch.h
 
 1446490195 source:m:\alineamientosecuencias\main.c
 	<stdio.h>
@@ -52,4 +54,12 @@
 	"waterman_smith.h"
 
 1446490007 m:\alineamientosecuencias\alineamientos\waterman_smith.h
+
+1446492733 c:\users\jose mario\documents\github\alineamientosecuencias\readfile.c
+
+1446494750 c:\users\jose mario\documents\github\alineamientosecuencias\alineamientos\waterman_smith.c
+	<string.h>
+	"waterman_smith.h"
+
+1446494881 c:\users\jose mario\documents\github\alineamientosecuencias\alineamientos\waterman_smith.h
 
