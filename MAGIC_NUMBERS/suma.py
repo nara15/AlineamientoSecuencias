@@ -78,5 +78,45 @@ def sumar1(pNum1, pNum2, base):
         
 
 
-        
+def mult(pNum1,pNum2, base):
+    l=makelist(pNum1)
+    l.reverse()
+    x=0
+    num= sum(doMagic(l,[],0,base))
+    for i in range(num):
+        x=suma(pNum2,x)
+    return x
 
+
+
+def doMagic(list1,list2,cont,bo):
+    global world
+    if list1==[]:
+        return list2
+    numRed=(world[list1[0][0]]+(26*cuentaPalo(list1[0])))*(bo**cont)
+    list2.append(numRed)
+    return doMagic(list1[1:],list2,cont+1,bo)
+
+def main():
+    print(mult("A72B3","A72B3",16))
+
+def cuentaPalo(string):
+    x=0
+    for i in range(len(string)):
+        if string[i]=="*":
+            x=x+1
+    return x
+
+def makelist(string):
+    l=[]
+    listNum=list(string)
+    for i in range(len(string)):
+        if listNum[i]=="*":
+            l[len(l)-1]=l[len(l)-1]+listNum[i]
+        else:
+            l.append(listNum[i])
+    return l
+    
+
+if __name__ == "__main__":
+   main()
