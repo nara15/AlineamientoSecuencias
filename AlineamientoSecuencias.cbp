@@ -42,8 +42,19 @@
 		<Unit filename="alineamientos/needleman_wunsch.h">
 			<Option target="&lt;{~None~}&gt;" />
 		</Unit>
+		<Unit filename="alineamientos/waterman_smith.c">
+			<Option compilerVar="CC" />
+			<Option target="&lt;{~None~}&gt;" />
+		</Unit>
+		<Unit filename="alineamientos/waterman_smith.h">
+			<Option target="&lt;{~None~}&gt;" />
+		</Unit>
 		<Unit filename="main.c">
 			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="readFile.c">
+			<Option compilerVar="CC" />
+			<Option target="&lt;{~None~}&gt;" />
 		</Unit>
 		<Extensions>
 			<code_completion />
