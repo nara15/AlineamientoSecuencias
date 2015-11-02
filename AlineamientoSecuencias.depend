@@ -7,7 +7,7 @@
 
 1446492733 c:\users\jose mario\documents\github\alineamientosecuencias\align.h
 
-1446494607 source:c:\users\jose mario\documents\github\alineamientosecuencias\main.c
+1446495920 source:c:\users\jose mario\documents\github\alineamientosecuencias\main.c
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
@@ -57,7 +57,7 @@
 
 1446492733 c:\users\jose mario\documents\github\alineamientosecuencias\readfile.c
 
-1446494750 c:\users\jose mario\documents\github\alineamientosecuencias\alineamientos\waterman_smith.c
+1446495606 c:\users\jose mario\documents\github\alineamientosecuencias\alineamientos\waterman_smith.c
 	<string.h>
 	"waterman_smith.h"
 

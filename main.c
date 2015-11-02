@@ -13,7 +13,8 @@
 //NEEDLEMAN WUNSCH ALGORITHM
 
 int main() {
-/*
+
+    /* NEEDLEMAN - WUNSCH */
     char *sequence1, *sequence2;
     sequence1 = loadSequence("hola1.seq");
     sequence2 = loadSequence("hola2.seq");
@@ -27,10 +28,11 @@ int main() {
 
     free(sequence1);
     free(sequence2);
-*/
+
+    /* SMITH - WATERMAN */
     char *sequence1, *sequence2;
-    sequence1 = loadSequence("str2.fa");
-    sequence2 = loadSequence("str1.fa");
+    sequence1 = loadSequence("smith1.seq");
+    sequence2 = loadSequence("smith2.seq");
 
     if(!(sequence1 && sequence2)) {
         fprintf(stderr, "Error al leer las secuencias\n");

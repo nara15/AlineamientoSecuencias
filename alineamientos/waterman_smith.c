@@ -97,7 +97,7 @@ void waterman_smith (char *pSeq1, char *pSeq2)
             table[i][j] = maximumSW(a, b, c);
         }
     }
-
+/*
     printf("\n");
     for (i = 0; i < dimSeq1 + 1; i++)
     {
@@ -108,7 +108,7 @@ void waterman_smith (char *pSeq1, char *pSeq2)
         printf("\n");
     }
     printf("\n");
-
+*/
     //Hallando el máximo valor de la matriz
     for (i = 1; i < dimSeq1 + 1; i++)
     {
@@ -123,7 +123,7 @@ void waterman_smith (char *pSeq1, char *pSeq2)
         }
     }
 
-/*
+
     //Algoritmo de Traceback
     i = highScorePos[0];
     j = highScorePos[1];
@@ -164,7 +164,7 @@ void waterman_smith (char *pSeq1, char *pSeq2)
             }
         }
     }
-*/
+
 
     //Liberar la memoria de la matriz
     eliminarMatrizSW(table, dimSeq1 + 1);
