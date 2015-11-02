@@ -29,17 +29,27 @@
 
 1446063879 c:\users\jose mario\documents\github\alineamientosecuencias\alineamientos\needleman_wunsch.h
 
-1446481286 source:m:\alineamientosecuencias\main.c
+1446490195 source:m:\alineamientosecuencias\main.c
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
 	<limits.h>
 	<ctype.h>
+	"readFile.c"
 	"alineamientos/needleman_wunsch.c"
+	"alineamientos/waterman_smith.c"
 
-1446481085 m:\alineamientosecuencias\alineamientos\needleman_wunsch.c
+1446489244 m:\alineamientosecuencias\alineamientos\needleman_wunsch.c
 	<string.h>
 	"needleman_wunsch.h"
 
 1446481306 m:\alineamientosecuencias\alineamientos\needleman_wunsch.h
+
+1446482853 m:\alineamientosecuencias\readfile.c
+
+1446490503 m:\alineamientosecuencias\alineamientos\waterman_smith.c
+	<string.h>
+	"waterman_smith.h"
+
+1446490007 m:\alineamientosecuencias\alineamientos\waterman_smith.h
 

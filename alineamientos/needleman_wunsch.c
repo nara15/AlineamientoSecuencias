@@ -124,7 +124,6 @@ void needleman_wunsch(char *pSeq1, char *pSeq2)
         //Inicio oficial del algoritmo
         if ( (i > 0) && (j > 0) && (table[i][j] == table[i - 1][j - 1] + s))
         {
-            //printf("%i\t", table[i][j]);
             printf("%c", pSeq1[i - 1]);
             printf("%c\n", pSeq2[j - 1]);
             i --;
@@ -133,13 +132,11 @@ void needleman_wunsch(char *pSeq1, char *pSeq2)
         else {
             if ( (i > 0) && (table[i][j] == table[i - 1][j] + GAP_PENALTY))
             {
-                //printf("%i, %i\n", table[i][j], table[i - 1][j] + GAP_PENALTY);
                 printf("%c", pSeq1[i - 1]);
                 printf("%c\n", '*');
                 i --;
             }
             else {
-                //printf("%i, %i\n", table[i][j], table[j][j - 1] + GAP_PENALTY);
                 printf("%c", '*');
                 printf("%c\n", pSeq2[j - 1]);
                 j --;

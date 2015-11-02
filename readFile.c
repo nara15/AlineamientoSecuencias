@@ -1,5 +1,3 @@
-#ifndef READFILE_C_INCLUDED
-#define READFILE_C_INCLUDED
 
 /*loadSequence takes a filename, loads all the alphabetic characters in the
   file into a string (converting to upper case) and returns the string, or NULL
@@ -43,6 +41,3 @@ char *loadSequence(char *filename) {
   seqString[i] = '\0';                /*null-terminate string*/
   return(seqString);
 }
-
-
-#endif // READFILE_C_INCLUDED
