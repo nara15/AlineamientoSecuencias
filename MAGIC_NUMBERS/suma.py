@@ -85,10 +85,10 @@ def sumar1(pNum1, pNum2, base):
 def mult(pNum1,pNum2, base):
     l=makelist(pNum1)
     l.reverse()
-    x=0
+    x="0"
     num= sum(doMagic(l,[],0,base))
     for i in range(num):
-        x=suma(pNum2,x)
+        x=suma(pNum2,x,base)
     return x
 
 
