@@ -113,9 +113,9 @@ def sumarMagicos(lista, i, j, baseOrigen, baseDestino):
 """ FUNCIÓN MAIN DEL PROGRAMA """
 
 def main():
-    numeroActual = "591"
-    baseOrigen = 10
-    baseDestino = 16
+    numeroActual = "24F"
+    baseOrigen = 16
+    baseDestino = 10
 
     global world
     world = genWorld(baseDestino)

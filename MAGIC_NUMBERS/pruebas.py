@@ -116,6 +116,7 @@ for character in innitvar:
     integer *= basevar
     integer += value
 
+
 # Create a value-to-symbol table.
 VA2SY = dict(map(reversed, SY2VA.items()))
 
@@ -133,6 +134,7 @@ while integer:
     integer, value = divmod(integer, convertvar)
 
     array.append(VA2SY[value])
+    
 answer = ''.join(reversed(array))
 
 # Display the results of the calculations.
